@@ -1,6 +1,6 @@
-require "./users_processor"
-require "./users_storage"
-require "./responder"
+require_relative "users_processor"
+require_relative "users_storage"
+require_relative "responder"
 
 class Application
   def call(environment)
