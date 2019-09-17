@@ -1,7 +1,8 @@
+require "bundler/setup"
+require "json"
+
 require "./application"
 require "./responder"
-
-require "json"
 
 map "/users" do
   run Application.new
