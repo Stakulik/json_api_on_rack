@@ -1,5 +1,6 @@
 ### Для запуска:
 
+0. Предполагается, что Ruby и Rack уже установлены на пк
 1. [Ставим Postman](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop) 
 2. Копируем репу `git clone git@github.com:Stakulik/json_api_on_rack.git`
 3. Переходим в репу и делаем `rackup config.ru`
