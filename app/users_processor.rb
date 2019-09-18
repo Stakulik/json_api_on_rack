@@ -66,11 +66,15 @@ class UsersProcessor
   end
 
   def wrap_data(data)
-    { data: data }
+    { data: data, success_code: success_code }
   end
 
   def wrap_error(error_code)
     { error_code: error_code }
+  end
+
+  def success_code
+    request.post? ? :created : :ok
   end
 
   def collection

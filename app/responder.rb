@@ -1,19 +1,24 @@
 class Responder
   def initialize(args)
-    @data = args
+    @data = args.slice(:data)
+    @success_code = args[:success_code]
     @error_code = args[:error_code]
   end
 
   def respond
-    error_code.nil? ? ok(data) : send(error_code)
+    error_code.nil? ? send(success_code, data) : send(error_code)
   end
 
   private
 
-  attr_reader :data, :error_code
+  attr_reader :data, :success_code, :error_code
 
   def ok(data)
     [200, { "Content-Type" => "application/json" }, [data.to_json]]
+  end
+
+  def created(data)
+    [201, { "Content-Type" => "application/json" }, [data.to_json]]
   end
 
   def unprocessable_entity

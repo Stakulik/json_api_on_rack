@@ -14,6 +14,8 @@ class Application
   attr_reader :env
 
   def response
+    return { error_code: :not_found } if type.empty?
+
     processor_class.new(request: request, payload: payload, storage: send(storage)).process
   end
 
