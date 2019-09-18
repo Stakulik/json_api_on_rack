@@ -1,11 +1,14 @@
 ### Для запуска:
 
-0. Предполагается, что Ruby и Rack уже установлены на пк
-1. [Ставим Postman](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop) 
-2. Копируем репу `git clone git@github.com:Stakulik/json_api_on_rack.git`
-3. Переходим в репу и делаем `rackup config.ru`
-4. Работаем с адресом `localhost:9292`
+1. `git clone git@github.com:Stakulik/json_api_on_rack.git`
+2. `cd json_api_on_rack`
+3. `bundle install`
+4. запускаем `bundle exec rackup bin/config.ru`, для запуска на своем порту добавляем ` -p 1234`
+5. работаем с `localhost:9292`, 9292 - порт по умолчанию
 
+### Тестирование
+
+`bundle exec rspec`
 
 ### Задание:
 
